@@ -113,6 +113,17 @@ function costOfRecipesInStore(recipeList, store) {
 }
 
 function cheapestStoreForRecipe(recipe, storeCollection) {
+  let cheapestStore = "";
+  let cost = 100;
+  let storeKeys = Object.keys(storeCollection);
+  for(let store of storeKeys){
+    let storeCost = costOfRecipeInStore(recipe,storeCollection[store]);//storeCollection.willys
+    if(cost > storeCost){
+      cheapestStore = store;
+      cost = storeCost;
+    }
+  }
+  return cheapestStore;
   // make it return the key for the store in storeCollection
   // that has the cheapest total cost for recipe. Feel free
   // to use costOfRecipe inside this function!
