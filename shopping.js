@@ -102,6 +102,11 @@ function costOfRecipeInStore(recipe, store) {
 }
 
 function costOfRecipesInStore(recipeList, store) {
+  let total = 0;
+  for(let recipe of recipeList){
+    total += costOfRecipeInStore(recipe,store)
+  }
+  return total;
   // it takes an array of recipes and a store, and should return
   // the total cost for shopping for all the recipes in the given store.
   // Feel free to use costOfRecipe inside this function!
