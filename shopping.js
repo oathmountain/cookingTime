@@ -89,6 +89,15 @@ function mostExpensiveIngredient(store) {
 }
 
 function costOfRecipeInStore(recipe, store) {
+  let total = 0;
+  let recipeKeys = Object.keys(recipe);
+  //let storeKeys = Object.keys[store];
+  for(let ingredient of recipeKeys){
+    let amount = recipe[ingredient];
+    let cost = store[ingredient];
+    total += amount*cost;
+  }
+  return total;
   // make it return what it costs to shop for recipe at store
 }
 
