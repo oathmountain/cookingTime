@@ -114,7 +114,7 @@ function costOfRecipesInStore(recipeList, store) {
 
 function cheapestStoreForRecipe(recipe, storeCollection) {
   let cheapestStore = "";
-  let cost = 100;
+  let cost = Number.MAX_VALUE;;
   let storeKeys = Object.keys(storeCollection);
   for(let store of storeKeys){
     let storeCost = costOfRecipeInStore(recipe,storeCollection[store]);//storeCollection.willys
