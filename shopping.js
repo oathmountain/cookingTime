@@ -74,6 +74,16 @@ function totalNumberOfIngredients(recipe) {
 }
 
 function mostExpensiveIngredient(store) {
+  let mostExpensive = "";
+  let highestPrice = 0;
+  let keys = Object.keys(store);
+  for(let ingredient of keys){
+    if(store[ingredient] > highestPrice){
+      highestPrice = store[ingredient];
+      mostExpensive = ingredient;
+    }
+  }
+  return mostExpensive;
   // make it return the name of the most expensive ingredient
   // in the given store
 }
